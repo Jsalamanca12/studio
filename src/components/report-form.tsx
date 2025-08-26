@@ -1,7 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
-import { useEffect, useRef } from "react";
+import { useFormStatus } from "react-dom";
+import { useActionState, useEffect, useRef } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -33,7 +33,7 @@ function SubmitButton() {
 
 export function ReportForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useFormState(submitReport, initialState);
+  const [state, formAction] = useActionState(submitReport, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
